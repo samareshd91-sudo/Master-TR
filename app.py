@@ -214,7 +214,7 @@ class SMCAnalyzer:
         df['tr'] = tr1.combine(tr2, max).combine(tr3, max)
         df['atr'] = df['tr'].rolling(14).mean()
         return df
-    class BGStarEngine:
+class BGStarEngine:
     def fetch_data(self, sym, tf, limit=300):
         start_time = time.time()
         try:
