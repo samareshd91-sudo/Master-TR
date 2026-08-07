@@ -3,6 +3,6 @@ ccxt
 pandas
 numpy
 requests
+urllib3
 streamlit-autorefresh
-apscheduler
-
+APScheduler
