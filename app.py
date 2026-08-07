@@ -369,7 +369,7 @@ def run_scan_job():
         now = datetime.now()
         with STATE_LOCK:
             SYSTEM_STATUS["last_scan"] = now.strftime("%Y-%m-%d %H:%M:%S")
-            SYSTEM_STATUS["next_scan"] = (now + timedelta(seconds=60)).strftime("%Y-%m-%d %H:%M:%S")
+            SYSTEM_STATUS["next_scan"] = (now + timedelta(seconds=300)).strftime("%Y-%m-%d %H:%M:%S")
             COOLDOWNS = {k: v for k, v in COOLDOWNS.items() if now - v < timedelta(minutes=5)}
 
         engine.update_global_context()
