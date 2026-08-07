@@ -425,7 +425,7 @@ def run_scan_job():
 @st.cache_resource
 def start_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(run_scan_job, 'interval', seconds=90, max_instances=1)
+    scheduler.add_job(run_scan_job, 'interval', seconds=120, max_instances=1)
     scheduler.start()
     return scheduler
 
