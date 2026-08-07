@@ -35,7 +35,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 # 3. GLOBAL STATE & METRICS
 # ==========================================
 COINS = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "SOL/USDT", "XRP/USDT"]
-TIMEFRAMES = ["1m", "5m", "15m"]
+TIMEFRAMES = ["5m", "15m"]
 
 COOLDOWNS = {}
 STATE_LOCK = threading.Lock()
@@ -425,7 +425,7 @@ def run_scan_job():
 @st.cache_resource
 def start_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(run_scan_job, 'interval', seconds=150, max_instances=1)
+    scheduler.add_job(run_scan_job, 'interval', seconds=90, max_instances=1)
     scheduler.start()
     return scheduler
 
