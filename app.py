@@ -35,7 +35,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 # 3. GLOBAL STATE & METRICS
 # ==========================================
 COINS = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "SOL/USDT", "XRP/USDT"]
-TIMEFRAMES = ["5m", "15m"]
+TIMEFRAMES = ["15m"]
 
 COOLDOWNS = {}
 STATE_LOCK = threading.Lock()
